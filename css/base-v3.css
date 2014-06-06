@@ -1,0 +1,231 @@
+body {
+	color: #333;
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+	font: normal 1em/1.4em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+.search-bar {
+	background: rgba(255,255,255,0.85);
+	background-image: -webkit-gradient(linear, left 30%, left bottom, from(rgba(255,255,255,0.9)), 
+color-stop(0.5, rgba(255,255,255,0.5)),
+color-stop(0.8, rgba(255,255,255,0.5)),
+		to(rgba(255,255,255,1)));
+	box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+	position: absolute;
+	top: 0;
+	height: 3rem;
+	left: 0	;
+	right: 0;
+	z-index: 5;
+	padding: .5rem;
+	height: 3rem;
+	line-height: 2rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.search-bar-form > .search-bar-input {
+	background: rgba(255,255,255,0.88);
+	border: none;
+	border-radius: 1.2rem;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+	padding: .0625 .125rem;
+	height: 1.6rem;
+	font-size: 1.0rem;
+	width: 90%;
+	margin: 0 5%;
+	-webkit-appearance: none;
+}
+.search-bar-form > .search-bar-search-btn {
+	width: 31%;
+	height: 1.5rem;
+	display: none;
+}
+
+.search-results {
+	background: rgba(0,0,0,0.35);
+	position: absolute;
+	right: 0;
+	width: 15rem;
+	top: 3rem;
+	bottom: 0;
+	padding-top: 3.25rem;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+	-webkit-transform: translateZ(1000000px);
+}
+.result-item {
+	padding: .25rem .5rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 15rem;
+	position: relative;
+	float:left;
+}
+.result-item > div {
+	background: #fff;
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.6);
+	padding: .25rem;
+	cursor: pointer;
+}
+.result-item.selected > div {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f1f1f1), to(#ddd));
+}
+.result-item .thumbnail-container {
+	position: absolute;
+	overflow: hidden;
+	margin: -.25rem;
+	bottom: .5rem;
+	top: .5rem;
+}
+.result-item .thumbnail {
+	max-width: 7rem;
+	height: 100%;
+	float: left;
+}
+.result-item .duration {
+	background: rgba(0,0,0,0.6);
+	color: #fff;
+	padding: 0 .125rem;
+	font-size: .75rem;
+	line-height: 1rem;
+	position: absolute;
+	right: .25rem;
+	bottom: .25rem;
+}
+.result-item .metadata {
+	color: #222;
+	margin-left: 5.25rem;
+}
+.result-item .title {
+	height: 1.2rem;
+	font-size: .9rem;
+	overflow: hidden;
+	display: block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.result-item .description {
+	color: #888;
+	font-size: .7rem;
+	line-height: .9rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.8rem;
+	margin: .1875rem 0;
+}
+.main-stage {
+display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right:  16rem;
+	bottom: 0;
+	box-shadow: inset -1px 0 0 rgba(0,0,0,0.1);
+}
+.main-stage > iframe {
+	width: 100% !important;
+	height: 70% !important;
+}
+
+.stage-metadata {
+	background: #fff;
+	margin: .5rem 0 .5rem .5rem;
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.6);
+	position: absolute;
+	top:  70%;
+	bottom: 0;
+	left: 0;
+	right: .5rem;
+	padding: 1rem;
+	-webkit-box-sizing: border-box;
+}
+.stage-metadata .title {
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.app-view {
+	position: absolute;
+	top:0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: -webkit-gradient(linear, left 30%, left 60%, from(#000), to(#333)) !important;
+}
+.stage-space {
+	position: absolute;
+	top:0;
+	left: 0;
+	right:0;
+	bottom: 0;
+	-webkit-transition: all 1.0s ease-in-out;
+	-webkit-transform-style: preserve-3d;
+	-webkit-perspective: 1000;
+	-webkit-transform-origin: 90% 33% 0;
+}
+
+.stage-space .video {
+	position: absolute;
+	bottom: 25%;
+	left: 10%;
+	width: 640px;
+	height: 360px;
+	position: absolute;
+	overflow: hidden;
+/*	-webkit-transform-style: preserve-3d;
+*/}
+
+.video img {
+	height: 480px;
+	margin-top: -60px;
+	z-index: -1;
+}
+
+.video > .video-container,
+.video > .thumbnail-container {
+	background: -webkit-gradient(linear, left top, left bottom, from(#222), to(#000));
+	position: absolute;
+}
+
+.video > .video-container {
+	-webkit-transform: rotateY(180deg);
+	z-index: 2;
+}
+
+.reflection {
+	background: #333;
+	-webkit-transform-origin: bottom;
+	-webkit-transform: rotateX(180deg);
+}
+.reflection > .video-container,
+.reflection > .thumbnail-container {
+/*	-webkit-backface-visibility: visible;
+*/}
+.reflection > .thumbnail-container {
+	opacity: 0.4;
+	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
+	from(transparent), 
+	to(rgba(255,255,255,0.8)));
+}
+
+
+.use-transition {
+	-webkit-transition: all 1.0s ease-in-out;
+}
+.incoming,
+.outgoing,
+.behind-camera {
+	opacity: 0;
+}

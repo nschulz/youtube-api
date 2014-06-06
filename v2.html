@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+        <title>Schulz Practical</title>
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" defer></script>
+        <script src="lib/underscore.js" defer></script>
+        <script src="lib/backbone.js" defer></script>
+        <script src="lib/mustache.js" defer></script>
+        <script src="lib/youtube-api.js" defer></script>
+        <script src="js/application.js" defer></script>
+
+        <script id="collection-view" type="text/template">
+            <div class="collection-view">
+                {{#items}}
+                <div id="{{attributes.id}}" class="result-item" data-video-url="{{attributes.url}}">
+                    <div>
+                        <div class="thumbnail-container">
+                            <img src="{{attributes.thumbnail}}" class="thumbnail">
+                            <span class="duration">{{attributes.duration}}</span>
+                        </div>
+                        <div class="metadata">
+                            <span class="title">{{attributes.title}}</span>
+                            <p class="description">{{attributes.description}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{/items}}
+            </div>
+        </script>
+
+        <script id="main-stage" type="text/template">
+            <iframe id="video-player" class="youtube-player" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/{{video.id}}" allowfullscreen frameborder="0">
+            </iframe>
+            <div class="stage-metadata">
+                <span class="title">{{video.title}}</span>
+                <p class="description">{{video.description}}</p>
+            </div>
+        </script>
+
+
+        <script id="search-bar" type="text/template">
+            <form class="search-bar-form">
+                <input class="search-bar-input" type="search" placeholder="Search" value="{{searchQuery}}">
+            </form>
+        </script>
+    </head>
+  <body>
+  </body>
+</html>
+
